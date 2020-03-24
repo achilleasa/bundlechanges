@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/juju/collections/set"
 	"github.com/juju/errors"
 	"gopkg.in/juju/charm.v6"
@@ -77,6 +78,7 @@ func FromData(config ChangesConfig) ([]Change, error) {
 			return nil, errors.Trace(err)
 		}
 	}
+	spew.Dump(changes.changes)
 	return changes.sorted(), nil
 }
 
